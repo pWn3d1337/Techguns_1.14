@@ -1,7 +1,7 @@
 Techguns2
 1.14.4 Port/Rewrite of Techguns mod for Minecraft. WIP
 
-Techguns 1.14.4 is still an early version and not well tested. Bugs may happen. Use at own risk.
+Techguns 1.14.4 is still in the works not complete.
 
 Handled by RedRoseWarrior1 aka Sammy aka KingOfTheGamesYT aka DevMan_Minecraft
 
