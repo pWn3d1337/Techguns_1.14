@@ -1,6 +1,5 @@
 package com.pWn3d1337.techguns;
 
-
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.entity.ai.attributes.GlobalEntityTypeAttributes;
@@ -11,6 +10,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.DeferredWorkQueue;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
@@ -24,7 +24,12 @@ import net.minecraftforge.fml.loading.FMLPaths;
 @Mod("techguns")
 public class Techguns
 {
+	//Mod integration
+	public boolean FTBLIB_ENABLED=false;
+	public boolean CHISEL_ENABLED=false;
     public static final String MODID = "techguns";
+	public static Techguns instance;
+
 	public Techguns() {
 
 		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
@@ -37,8 +42,16 @@ public class Techguns
 
 	}
 
-	private void setup(final FMLCommonSetupEvent event) {
 
+	private void setup(final FMLCommonSetupEvent event) {
+		{
+			if(ModList.get().isLoaded("ftblib")) {
+				FTBLIB_ENABLED=true;
+			}
+			if(ModList.get().isLoaded("chisel")) {
+				CHISEL_ENABLED=true;
+			}
+		}
 	}
 	private void doClientStuff(final FMLClientSetupEvent event) {
 

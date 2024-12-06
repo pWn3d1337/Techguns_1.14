@@ -88,6 +88,12 @@ dependencies {
 
 //project name, project id, file id
     implementation fg.deobf("curse.maven:jei-238222:3189632")
+    implementation fg.deobf("curse.maven:crafttweaker-239197:5007325")
+    implementation fg.deobf("curse.maven:chisel-235279:3376782")
+    implementation fg.deobf("curse.maven:the-lost-cities-269024:3953787")
+    implementation fg.deobf("curse.maven:ftb-library-forge-404465:3553840")
+    implementation fg.deobf("curse.maven:architectury-api-419699:3385660")
+    implementation fg.deobf("curse.maven:ftb-teams-forge-404468:3535953")
 }
 
 jar {
