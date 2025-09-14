@@ -21,6 +21,8 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.loading.FMLPaths;
 
+import java.util.logging.Logger;
+
 @Mod("techguns")
 public class Techguns
 {
@@ -29,6 +31,9 @@ public class Techguns
 	public boolean CHISEL_ENABLED=false;
     public static final String MODID = "techguns";
 	public static Techguns instance;
+	public static Logger logger_client = Logger.getLogger("TechgunsClient");
+	public static Logger logger_server = Logger.getLogger("TechgunsServer");
+	public static Logger logger_both = Logger.getLogger("Techguns");
 
 	public Techguns() {
 
@@ -36,10 +41,9 @@ public class Techguns
 		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
 		final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 		modEventBus.addListener(this::setup);
-
+		ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, TGConfig.COMMON_SPEC, "techguns-common.toml");
+		ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, TGConfig.CLIENT_SPEC, "techguns-client.toml");
 		MinecraftForge.EVENT_BUS.register(this);
-
-
 	}
 
 
