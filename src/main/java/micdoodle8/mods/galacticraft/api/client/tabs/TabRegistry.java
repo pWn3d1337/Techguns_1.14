@@ -4,15 +4,15 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.inventory.InventoryScreen;
 import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
-;
 import net.minecraft.inventory.container.PlayerContainer;
 import net.minecraft.network.play.client.CCloseWindowPacket;
 import net.minecraft.potion.EffectInstance;
+
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.GuiScreenEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.client.FMLClientHandler;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -63,7 +63,7 @@ public class TabRegistry
 	{
 	}
 	
-	@SideOnly(Side.CLIENT)
+	@OnlyIn(Dist.CLIENT)
 	@SubscribeEvent
 	public void guiPostInit (GuiScreenEvent.InitGuiEvent.Post event)
 	{
@@ -75,7 +75,7 @@ public class TabRegistry
 			guiLeft += getPotionOffset() + recipeBookOffset;
 
 			TabRegistry.updateTabValues(guiLeft, guiTop, InventoryTabVanilla.class);
-			TabRegistry.addTabsToList(event.getButtonList());
+			TabRegistry.addTabsToList(event.getWidgetList());
 		}
 	}
 

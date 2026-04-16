@@ -5,6 +5,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.inventory.InventoryScreen;
+import net.minecraft.client.renderer.ItemRenderer;
 import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.client.renderer.RenderItem;
 import net.minecraft.item.ItemStack;
@@ -16,7 +17,7 @@ public abstract class AbstractTab extends Button
 	ResourceLocation texture = new ResourceLocation("textures/gui/container/creative_inventory/tabs.png");
 	ItemStack renderStack;
 	public int potionOffsetLast;
-    protected RenderItem itemRender;
+    protected ItemRenderer itemRender;
 
 	public AbstractTab(int id, int posX, int posY, ItemStack renderStack)
 	{

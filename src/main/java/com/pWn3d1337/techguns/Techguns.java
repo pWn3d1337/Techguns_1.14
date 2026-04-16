@@ -48,6 +48,8 @@ public class Techguns
 
 
 	private void setup(final FMLCommonSetupEvent event) {
+		TGPackets.init();
+
 		{
 			if(ModList.get().isLoaded("ftblib")) {
 				FTBLIB_ENABLED=true;

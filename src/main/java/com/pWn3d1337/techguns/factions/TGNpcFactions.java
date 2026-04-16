@@ -20,7 +20,6 @@ public class TGNpcFactions {
 		setHostile(TGNpcFaction.TURRET, false);
 		setHostile(TGNpcFaction.NEUTRAL, false);
 		
-		
 		setHostile(TGNpcFaction.HOSTILE, TGNpcFaction.TURRET,true);
 		setHostile(TGNpcFaction.HOSTILE, TGNpcFaction.NEUTRAL,true);
 		setHostile(TGNpcFaction.TURRET, TGNpcFaction.NEUTRAL,false);
@@ -52,7 +51,6 @@ public class TGNpcFactions {
 			return false;
 				
 		}
-
 	}
 	
 	public static boolean shouldAttack(UUID owner, UUID target, int pvpsetting) {
@@ -72,9 +70,7 @@ public class TGNpcFactions {
 			return false;
 				
 		}
-
 	}
-	
 	
 	public static boolean isEnemy(UUID owner, UUID target) {
 		if(Techguns.instance.FTBLIB_ENABLED && !owner.equals(target)) {
